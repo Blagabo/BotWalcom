@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
-const mySecret = process.env['MongoDB']
+// const mySecret = process.env['MongoDB']
+const mySecret = process.env.MongoDB;
 
 module.exports = (client) => {
   mongoose
@@ -19,15 +20,17 @@ module.exports = (client) => {
     function presence() {
       client.user.setPresence({
         status: "idle",
-        activities: [{
-          name: "En Proceso | 1.0.1",
-          type: "LISTENING"
-        }]
+        activities: [
+          {
+            name: "En Proceso | 1.0.2",
+            type: "LISTENING",
+          },
+        ],
       });
       console.log("Presence Cargado ✅".green);
     }
     presence();
-  }, 30000)
+  }, 300000);
 
   console.log(`Conectado como ${client.user.tag} 🤖`.green);
 };
