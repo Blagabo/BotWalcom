@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const mySecret = process.env.MongoDB;
+const mySecret = process.env['MongoDB']
 
 module.exports = (client) => {
   mongoose

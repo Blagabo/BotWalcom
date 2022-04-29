@@ -1,6 +1,7 @@
+const { KeepAlive } = require("./keep_alive")
 const Discord = require("discord.js");
 require("dotenv").config();
-const mySecret = process.env.TOKEN;
+const mySecret = process.env['TOKEN']
 require("colors");
 
 const client = new Discord.Client({
