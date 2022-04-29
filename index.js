@@ -5,7 +5,9 @@ const mySecret = process.env['TOKEN']
 require("colors");
 
 const client = new Discord.Client({
-  intents: [Discord.Intents.FLAGS.GUILDS, Discord.Intents.FLAGS.GUILD_MEMBERS, Discord.Intents.FLAGS.GUILD_MESSAGES],
+  intents: [Discord.Intents.FLAGS.GUILDS,     
+  Discord.Intents.FLAGS.GUILD_MEMBERS,   
+  Discord.Intents.FLAGS.GUILD_MESSAGES],
 });
 
 client.commands = new Discord.Collection();

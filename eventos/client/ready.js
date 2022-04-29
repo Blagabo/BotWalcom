@@ -15,5 +15,19 @@ module.exports = (client) => {
       console.log(err);
     });
 
+  setInterval(() => {
+    function presence() {
+      client.user.setPresence({
+        status: "idle",
+        activities: [{
+          name: "En Proceso | 1.0.1",
+          type: "LISTENING"
+        }]
+      });
+      console.log("Presence Cargado ✅".green);
+    }
+    presence();
+  }, 30000)
+
   console.log(`Conectado como ${client.user.tag} 🤖`.green);
 };
