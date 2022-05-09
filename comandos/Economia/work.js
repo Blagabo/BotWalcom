@@ -2,7 +2,7 @@ const { MessageEmbed } = require("discord.js");
 const ecoSchema = require(`${process.cwd()}/modelos/economia.js`);
 const { asegurarEco } = require(`${process.cwd()}/handlers/funciones.js`);
 const duration = require("humanize-duration");
-var frases = [
+const frases = [
   "ou shine people's shoes in class and they give you",
   "Someone came and performed a play. They gave you",
   "You work as an elevator mechanic and earn",
