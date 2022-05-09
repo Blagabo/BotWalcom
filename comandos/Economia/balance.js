@@ -28,11 +28,7 @@ module.exports = {
 		{ name: 'Inline field title', value: 'Some value here', inline: true },
 		{ name: 'Inline field title', value: 'Some value here', inline: true },
 	) */
-      .addField(
-        `🪙 **Wallet:** \`${data.wallet} tokens\``,
-        `:moneybag: **Total used:** \`${data.retirado} tokens\``,
-        false
-      )
+      .addField(`🪙 **Wallet:** \`${data.wallet} WCM Coins\``, `:moneybag: **Total used:** \`${data.retirado} WCM Coins\``, false)
       // .setImage('https://i.imgur.com/AfFp7pu.png')
       .setTimestamp();
     // .setFooter({ text: 'Some footer text here', iconURL: 'https://i.imgur.com/AfFp7pu.png' });

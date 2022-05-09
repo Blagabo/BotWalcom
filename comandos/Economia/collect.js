@@ -11,7 +11,7 @@ module.exports = {
     const user = message.guild.members.cache.get(args[0]) || message.mentions.members.first() || message.member;
     if (user.bot) return message.reply("❌ **Los bots no puede tener dinero!**");
     await asegurarEco(user.id);
-    const data = await ecoSchema.findOne({ userID: message.author.id });
+    let data = await ecoSchema.findOne({ userID: message.author.id });
     // Definimos cada cuanto se puede reclamar la recompensa en MS
     const tiempo_ms = 86400000;
     const recompensa = 100;
@@ -27,6 +27,7 @@ module.exports = {
         collect: Date.now(),
       }
     );
+    data = await ecoSchema.findOne({ userID: message.author.id });
 
     const exampleEmbed = new MessageEmbed()
       .setColor("#0x78008f")
@@ -45,7 +46,7 @@ module.exports = {
 		{ name: 'Inline field title', value: 'Some value here', inline: true },
 		{ name: 'Inline field title', value: 'Some value here', inline: true },
 	) */
-      .addField(`You have claimed your reward from \`${recompensa} tokens\``, `🪙 **Wallet:** \`${data.wallet} tokens\``, false)
+      .addField(`You have claimed your reward from \`${recompensa} WCM Coins\``, `🪙 **Wallet:** \`${data.wallet} WCM Coins\``, false)
       // .setImage('https://i.imgur.com/AfFp7pu.png')
       .setTimestamp();
     // .setFooter({ text: 'Some footer text here', iconURL: 'https://i.imgur.com/AfFp7pu.png' });
