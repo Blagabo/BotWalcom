@@ -45,12 +45,11 @@ module.exports = {
 		{ name: 'Inline field title', value: 'Some value here', inline: true },
 		{ name: 'Inline field title', value: 'Some value here', inline: true },
 	) */
-      .addField(`You have claimed your reward from \`${recompensa} tokens\``, false)
-      .addField(`🪙 **Wallet:** \`${data.wallet} tokens\``, false)
+      .addField(`You have claimed your reward from \`${recompensa} tokens\``, `🪙 **Wallet:** \`${data.wallet} tokens\``, false)
       // .setImage('https://i.imgur.com/AfFp7pu.png')
       .setTimestamp();
     // .setFooter({ text: 'Some footer text here', iconURL: 'https://i.imgur.com/AfFp7pu.png' });
 
-    return message.reply({ embeds: [exampleEmbed] });
+    message.reply({ embeds: [exampleEmbed] });
   },
 };
