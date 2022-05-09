@@ -19,6 +19,6 @@ module.exports = async (client, message) => {
     // ejecutar el comando
     command.run(client, message, args, data.prefijo);
   } else {
-    return message.reply("No he encontrado el comando que me has especificado !");
+    return message.reply("I couldn't find the command !");
   }
 };
