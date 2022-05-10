@@ -18,14 +18,14 @@ module.exports = {
     await asegurarEco(user.id);
     let data = await ecoSchema.findOne({ userID: message.author.id });
     // Definimos cada cuanto se puede reclamar la recompensa en MS 3hs = 10800000
-    const tiempo_ms = 3 * 60 * 60 * 1000;
+    const tiempo_ms = 8 * 60 * 60 * 1000;
     // Minimo 10 - Maximo 800 tokens
-    const recompensa = Math.floor(Math.random() * 800) + 10;
+    const recompensa = Math.floor(Math.random() * 150) + 30;
     const frase = frases[Math.floor(Math.random() + frases.length)];
     // Comprobaciones previas
     if (tiempo_ms - (Date.now() - data.work) > 0) {
       const tiempo_restante = duration(Date.now() - data.work - tiempo_ms, { language: "es", units: ["h", "m", "s"], round: true });
-      return message.reply(`🕐 **No puedes reclamar la recompensa todavia, debes esperar:** \`${tiempo_restante}\``);
+      return message.reply(`🕐 **You cannot claim the reward yet, you must wait.:** \`${tiempo_restante}\``);
     }
     await ecoSchema.findOneAndUpdate(
       { userID: message.author.id },
