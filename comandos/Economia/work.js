@@ -24,8 +24,8 @@ module.exports = {
     const frase = frases[Math.floor(Math.random() + frases.length)];
     // Comprobaciones previas
     if (tiempo_ms - (Date.now() - data.work) > 0) {
-      const tiempo_restante = duration(Date.now() - data.work - tiempo_ms, { language: "es", units: ["h", "m", "s"], round: true });
-      return message.reply(`🕐 **You cannot claim the reward yet, you must wait.:** \`${tiempo_restante}\``);
+      const tiempo_restante = duration(Date.now() - data.work - tiempo_ms, { language: "en", units: ["h", "m", "s"], round: true });
+      return message.reply(`🕐 **You cannot claim the reward yet, you must wait:** \`${tiempo_restante}\``);
     }
     await ecoSchema.findOneAndUpdate(
       { userID: message.author.id },
